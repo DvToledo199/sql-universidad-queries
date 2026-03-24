@@ -15,7 +15,9 @@ FROM persona
 WHERE tipo = 'alumno' AND YEAR(fecha_nacimiento) = 1999;
 
 -- 4. Retorna el llistat de professors/es que no han donat d'alta el seu número de telèfon en la base de dades i a més el seu NIF acaba en K. (nombre, apellido1, apellido2, nif)
-
+SELECT nombre, apellido1, apellido2, nif
+FROM persona
+WHERE tipo = 'profesor' AND telefono IS NULL AND nif LIKE '%k';
 
 -- 5. Retorna el llistat de les assignatures que s'imparteixen en el primer quadrimestre, en el tercer curs del grau que té l'identificador 7. (id, nombre, cuatrimestre, curso, id_grado)
 
