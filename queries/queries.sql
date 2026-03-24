@@ -2,7 +2,7 @@
 SELECT apellido1, apellido2, nombre
 FROM persona
 WHERE tipo = 'alumno'
-ORDER BY apellido1, appellido2, nombre;
+ORDER BY apellido1, apellido2, nombre;
 
 -- 2. Esbrina el nom i els dos cognoms dels alumnes que no han donat d'alta el seu número de telèfon en la base de dades. (nombre, apellido1, apellido2)
 
