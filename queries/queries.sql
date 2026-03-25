@@ -37,6 +37,9 @@ FROM curso_escolar c
 JOIN 
 
 -- 8. Retorna un llistat amb el nom de tots els departaments que tenen professors/es que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015). (nombre)
+SELECT d.nombre
+FROM deperamento d
+JOIN profesor p ON p.id_departamento = d.id
 
 
 -- 9. Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura durant el curs escolar 2018/2019. (nombre, apellido1, apellido2)
