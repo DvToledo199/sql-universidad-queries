@@ -2,7 +2,7 @@
 
 
 ## 📈 Resumen
-✅ 19 correctas de 22 queries
+✅ 20 correctas de 26 queries
 
 ## ✅ Query 1: Correcto
 
@@ -13,63 +13,63 @@
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
 
 ## ✅ Query 6: Correcto
 
-⏱ Tiempo: 0.42 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY
+⏱ Tiempo: 0.40 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento
 
 ---
 
 ## ✅ Query 7: Correcto
 
 ⏱ Tiempo: 0.56 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,nif, PRIMARY,id_asignatura,id_curso_escolar
+✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY,id_asignatura,id_curso_escolar, PRIMARY
 
 ---
 
 ## ✅ Query 8: Correcto
 
-⏱ Tiempo: 0.41 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY, id_profesor,id_grado
+⏱ Tiempo: 0.38 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor,id_grado, PRIMARY,id_departamento
 
 ---
 
 ## ✅ Query 9: Correcto
 
-⏱ Tiempo: 0.39 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_curso_escolar
+⏱ Tiempo: 0.38 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,id_curso_escolar, PRIMARY
 
 ---
 
 ## ✅ Query 10: Correcto
 
-⏱ Tiempo: 0.42 ms
+⏱ Tiempo: 0.43 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -91,13 +91,13 @@
 ## ✅ Query 13: Correcto
 
 ⏱ Tiempo: 0.34 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor
+✅ Se usó índice(s) en la consulta: id_profesor, PRIMARY
 
 ---
 
 ## ✅ Query 14: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: id_profesor
 
 ---
@@ -133,21 +133,21 @@
  Derecho
 ```
 
-⏱ Tiempo: 0.35 ms
-✅ Se usó índice(s) en la consulta: id_asignatura, id_departamento, id_profesor
+⏱ Tiempo: 0.37 ms
+✅ Se usó índice(s) en la consulta: id_profesor, id_departamento, id_asignatura
 
 ---
 
 ## ✅ Query 16: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.34 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 17: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -161,14 +161,14 @@
 
 ## ✅ Query 19: Correcto
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
 
 ## ✅ Query 20: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.38 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -180,11 +180,82 @@
 @@ -1,2 +1,2 @@
 -grau | total
 -Grado en Ingeniería Informática (Plan 2015) | 51.00
-+id | nif | nombre | apellido1 | apellido2 | ciudad | direccion | telefono | fecha_nacimiento | sexo | tipo
-+4.00 | 17105885A | Pedro | Heller | Pagac | Almería | C/ Estrella fugaz | NULL | 2000-10-05 | H | alumno
++1
++1.00
 ```
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.27 ms
+🔍 No se usó ningún índice en esta consulta.
+
+---
+
+## ❌ Query 22: Incorrecto
+```diff
+--- 
++++ 
+@@ -1,6 +1,2 @@
+-grau | tipo | total_creditos
+-Grado en Ingeniería Informática (Plan 2015) | básica | 72.00
+-Grado en Ingeniería Informática (Plan 2015) | obligatoria | 54.00
+-Grado en Ingeniería Informática (Plan 2015) | optativa | 180.00
+-Grado en Biotecnología (Plan 2015) | básica | 60.00
+-Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
++1
++1.00
+```
+
+⏱ Tiempo: 0.25 ms
+🔍 No se usó ningún índice en esta consulta.
+
+---
+
+## ❌ Query 23: Incorrecto
+```diff
+--- 
++++ 
+@@ -1,3 +1,2 @@
+-anyo_inicio | total
+-2014.00 | 3.00
+-2018.00 | 3.00
++1
++1.00
+```
+
+⏱ Tiempo: 0.28 ms
+🔍 No se usó ningún índice en esta consulta.
+
+---
+
+## ❌ Query 24: Incorrecto
+```diff
+--- 
++++ 
+@@ -1,13 +1,2 @@
+-id | nombre | apellido1 | apellido2 | total
+-14.00 | Manolo | Hamill | Kozey | 11.00
+-3.00 | Zoe | Ramirez | Gea | 10.00
+-5.00 | David | Schmidt | Fisher | 0.00
+-15.00 | Alejandro | Kohler | Schoen | 0.00
+-8.00 | Cristina | Lemke | Rutherford | 0.00
+-16.00 | Antonio | Fahey | Considine | 0.00
+-10.00 | Esther | Spencer | Lakin | 0.00
+-12.00 | Carmen | Streich | Hirthe | 0.00
+-17.00 | Guillermo | Ruecker | Upton | 0.00
+-18.00 | Micaela | Monahan | Murray | 0.00
+-13.00 | Alfredo | Stiedemann | Morissette | 0.00
+-20.00 | Francesca | Schowalter | Muller | 0.00
++1
++1.00
+```
+
+⏱ Tiempo: 0.25 ms
+🔍 No se usó ningún índice en esta consulta.
+
+---
+
+## ✅ Query 25: Correcto
+
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 🚨 **Problemas detectados:**
@@ -192,6 +263,27 @@
 
 ---
 
-## ❌ Query 22: Error
-- **Descripción**: 'NoneType' object is not iterable
+## ❌ Query 26: Incorrecto
+```diff
+--- 
++++ 
+@@ -1,11 +1,2 @@
+-apellido1 | apellido2 | nombre
+-Schmidt | Fisher | David
+-Kohler | Schoen | Alejandro
+-Lemke | Rutherford | Cristina
+-Fahey | Considine | Antonio
+-Spencer | Lakin | Esther
+-Streich | Hirthe | Carmen
+-Ruecker | Upton | Guillermo
+-Monahan | Murray | Micaela
+-Stiedemann | Morissette | Alfredo
+-Schowalter | Muller | Francesca
++1
++1.00
+```
 
+⏱ Tiempo: 0.26 ms
+🔍 No se usó ningún índice en esta consulta.
+
+---
