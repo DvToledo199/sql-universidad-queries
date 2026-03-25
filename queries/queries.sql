@@ -95,7 +95,7 @@ FROM departamento d
 LEFT JOIN profesor p ON d.id = p.id_departamento
 LEFT JOIN asignatura a ON p.id_profesor = a.id_profesor
 LEFT JOIN alumno_se_matricula_asignatura am ON a.id = am.id_asignatura
-WHERE am.id_asignatura IS NULL;
+WHERE am.id_asignatura IS NULL OR a.id IS NULL;
 
 -- 16. Retorna el nombre total d'alumnes que hi ha. (total)
 SELECT COUNT(*) AS total
@@ -140,6 +140,10 @@ ORDER BY total DESC;
 
 
 -- 25. Retorna totes les dades de l'alumne/a més jove. (*)
-
+SELECT *
+FROM persona
+WHERE tipo = 'alumno'
+ORDER BY fecha_nacimiento DESC
+LIMIT 1;
 
 -- 26. Retorna un llistat amb els professors/es que tenen un departament associat i que no imparteixen cap assignatura. (apellido1, apellido2, nombre)
